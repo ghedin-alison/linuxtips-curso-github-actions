@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Confere Versão do ubuntu
         run: cat /etc/os-release
-      -name: Exibir Mensagem
+      - name: Exibir Mensagem
         run: echo "Meu primeiro workflow com github actions!!!"
