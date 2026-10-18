@@ -1,0 +1,15 @@
+name: Primeiro workflow linuxtips
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  giropops:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confere Versão do ubuntu
+        run: cat /etc/os-release
+      -name: Exibir Mensagem
+        run: echo "Meu primeiro workflow com github actions!!!"
