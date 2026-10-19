@@ -16,7 +16,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: messages
-          path: tmp/msg/mensagem.txt
+          path: ${{ github.workspace }}/mensagem.txt
 
       - name: Listar diretório
         run: ls -lha
@@ -30,7 +30,7 @@ jobs:
         run: ls -lha
       - uses: actions/download-artifact@v4
         with:
-          name: messages-upload
+          name: messages
           path: messages
       - name: Listar diretório
         run: ls -lha && ls ./messages/
