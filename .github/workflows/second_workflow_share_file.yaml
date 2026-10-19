@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: Confere Versão do ubuntu
         run: cat /etc/os-release
-      - name: Exibir Mensagem
+      - name: Salvar Arquivo de mensagens
         run: echo "Meu primeiro workflow com github actions!!!" > mensagem.txt
-      - name: Exibir arquivo
+      - name: Listar diretório
         run: ls -lha
       - name: Listar arquivo mensagem.txt
         run: cat mensagem.txt
