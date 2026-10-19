@@ -24,6 +24,7 @@ jobs:
         run: cat mensagem.txt
   job_2:
     runs-on: ubuntu-latest
+    needs: job_1
     steps:
       - name: Listar diretório
         run: ls -lha
