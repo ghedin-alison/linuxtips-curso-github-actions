@@ -1,9 +1,7 @@
 name: Primeiro workflow linuxtips
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch
 
 jobs:
   giropops:
