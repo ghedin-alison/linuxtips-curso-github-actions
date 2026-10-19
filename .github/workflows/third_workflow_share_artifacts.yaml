@@ -13,6 +13,11 @@ jobs:
         run: cat /etc/os-release
       - name: Salvar Arquivo de mensagens
         run: echo "Meu primeiro workflow com github actions!!!" > mensagem.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: messages
+          path: tmp/msg/mensagem.txt
+
       - name: Listar diretório
         run: ls -lha
       - name: Listar arquivo mensagem.txt
@@ -21,6 +26,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Listar diretório
+        run: ls -lha && ls ./messages
+      - uses: actions/download-artifact@v4
+        with:
+          name: messages
+          path: mensagem.txt
+      - name: Listar diretório
+        run: ls -lha && ls ./messages
+      - name: Copia arquivo e remove o diretório
+        run: mv messages/mensagem.txt . && rm -rf ./messages
+      - name: Listar diretório
         run: ls -lha
-      - name: Listar arquivo mensagem.txt
+      - name: Acessar arquivo mensagem.txt
         run: cat mensagem.txt
