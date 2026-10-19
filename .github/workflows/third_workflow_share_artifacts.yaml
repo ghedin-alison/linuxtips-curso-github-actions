@@ -12,7 +12,7 @@ jobs:
       - name: Confere Versão do ubuntu
         run: cat /etc/os-release
       - name: Salvar Arquivo de mensagens
-        run: echo "Meu primeiro workflow com github actions!!!" > mensagem.txt
+        run: echo "Meu primeiro workflow com github actions!!!" > ${{ github.workspace }}/mensagem.txt
       - uses: actions/upload-artifact@v4
         with:
           name: messages
