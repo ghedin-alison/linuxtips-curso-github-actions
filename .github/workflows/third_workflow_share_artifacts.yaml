@@ -30,10 +30,10 @@ jobs:
         run: ls -lha
       - uses: actions/download-artifact@v4
         with:
-          name: messages
-          path: mensagem.txt
+          name: messages-upload
+          path: messages
       - name: Listar diretório
-        run: ls -lha && ls ./messages
+        run: ls -lha && ls ./messages/
       - name: Copia arquivo e remove o diretório
         run: mv messages/mensagem.txt . && rm -rf ./messages
       - name: Listar diretório
