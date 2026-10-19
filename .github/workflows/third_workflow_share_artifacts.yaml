@@ -1,0 +1,26 @@
+name: Visualizando arquivos entre jobs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confere Versão do ubuntu
+        run: cat /etc/os-release
+      - name: Salvar Arquivo de mensagens
+        run: echo "Meu primeiro workflow com github actions!!!" > mensagem.txt
+      - name: Listar diretório
+        run: ls -lha
+      - name: Listar arquivo mensagem.txt
+        run: cat mensagem.txt
+  job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Listar diretório
+        run: ls -lha
+      - name: Listar arquivo mensagem.txt
+        run: cat mensagem.txt
