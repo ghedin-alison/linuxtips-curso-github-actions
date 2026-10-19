@@ -1,4 +1,4 @@
-name: Primeiro workflow linuxtips
+name: Visualizando arquivos entre steps
 
 on:
   push:
