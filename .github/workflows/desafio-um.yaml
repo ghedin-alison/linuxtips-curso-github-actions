@@ -15,10 +15,17 @@ on:
 jobs:
   desafio:
     runs-on: ubuntu-latest
+    env:
+      INPUT_IMAGE_NAME: ${{ inputs.image_name }}
+      INPUT_IMAGE_TAG: ${{ inputs.image_tag }}
     steps:
       - name: Download da imagem recebida como parametro
-        run: docker pull ${{ inputs.image_name }}:${{ inputs.image_tag }}
+        run: docker pull ${{ env.INPUT_IMAGE_NAME }}:${{ env.INPUT_IMAGE_TAG }}
       - name: Verificar imagem
         run: docker images
       - name: Análise de vulneravilidades
-        run: docker scout cves ${{ inputs.image_name }}:${{ inputs.image_tag }}
+        uses: docker/scout-action@v1
+        with:
+          command: cves
+          image: ${{ env.INPUT_IMAGE_NAME }}:${{ env.INPUT_IMAGE_TAG }}
+          summary: true
