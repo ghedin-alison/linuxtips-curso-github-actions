@@ -1,9 +1,7 @@
 name: Visualizando arquivos entre jobs
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   job_1:
