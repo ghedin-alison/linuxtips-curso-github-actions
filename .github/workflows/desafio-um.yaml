@@ -20,3 +20,5 @@ jobs:
         run: docker pull ${{ inputs.image_name }}:${{ inputs.image_tag }}
       - name: Verificar imagem
         run: docker images
+      - name: Análise de vulneravilidades
+        run: docker scout cves ${{ inputs.image_name }}:${{ inputs.image_tag }}
