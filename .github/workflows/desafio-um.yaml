@@ -23,9 +23,9 @@ jobs:
         run: docker pull ${{ env.INPUT_IMAGE_NAME }}:${{ env.INPUT_IMAGE_TAG }}
       - name: Verificar imagem
         run: docker images
-#      - name: Análise de vulneravilidades
-#        uses: docker/scout-action@v1
-#        with:
-#          command: cves
-#          image: ${{ env.INPUT_IMAGE_NAME }}:${{ env.INPUT_IMAGE_TAG }}
-#          summary: true
+      - name: Análise de vulneravilidades
+        uses: docker/scout-action@v1
+        with:
+          image: ${{ env.INPUT_IMAGE_NAME }}:${{ env.INPUT_IMAGE_TAG }}
+          only-severities: critical, high
+          summary: true
