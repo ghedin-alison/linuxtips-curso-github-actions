@@ -42,7 +42,7 @@ jobs:
       - name: Análise de vulneravilidades
         uses: docker/scout-action@v1
         with:
-          command: quickview,cves,recommendation,sbom
+          command: quickview,cves,recommendations,sbom
           image: ${{ env.INPUT_IMAGE_NAME }}:${{ env.INPUT_IMAGE_TAG }}
           only-severities: critical, high
           summary: true
