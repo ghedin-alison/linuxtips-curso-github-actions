@@ -38,7 +38,7 @@ jobs:
       - name: Análise de vulneravilidades
         uses: docker/scout-action@v1
         with:
-          command: quickview,cves,recommendations,sbom
+          command: quickview,recommendations,sbom
           image: ${{ github.event.inputs.image_name }}
           only-severities: critical, high
           summary: true
