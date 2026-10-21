@@ -28,12 +28,12 @@ jobs:
 
       - name: Download da imagem recebida como parametro
         run: |
-        docker pull ${{ github.event.inputs.image_name }}
+          docker pull ${{ github.event.inputs.image_name }}
 
       - name: Verificar imagem
         run: |
-        IMAGE_NAME=$(echo "${{ github.event.inputs.image_name }}" | cut -d ':' -f 1)
-        docker images | grep $IMAGE_NAME
+          IMAGE_NAME=$(echo "${{ github.event.inputs.image_name }}" | cut -d ':' -f 1)
+          docker images | grep $IMAGE_NAME
 
       - name: Análise de vulneravilidades
         uses: docker/scout-action@v1
