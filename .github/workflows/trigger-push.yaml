@@ -1,0 +1,16 @@
+name: Trigger push
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'staging'
+    paths:
+      - '**.tf'
+
+jobs:
+  job-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print on Push
+        run: echo "Um push em seu arquivos de terraform foi executado na branch staging ou main"
