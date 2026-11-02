@@ -1,0 +1,12 @@
+name: Trigger Issue
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  trigger-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Avisar manutenção em issues
+        run: echo "Uma issue passou por alteração..."
