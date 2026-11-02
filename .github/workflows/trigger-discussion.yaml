@@ -1,0 +1,12 @@
+name: Acionamento via Trigger Discussion
+
+on:
+  discussion:
+    types: [created, edited, answered]
+
+jobs:
+  job-discussion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Avisa dobre Discussion
+        run: echo "uma nova discussão criada/alterada/respondida"
