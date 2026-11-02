@@ -2,13 +2,12 @@ name: Trigger de Schedule
 
 on:
   schedule:
-    - cron: '10 20 * * *'
-      timezone: "America/New_York"
+    - cron: 25 20 * * *
 
 jobs:
   trigger-schedule:
     runs-on: ubuntu-latest
     steps:
       - name: Print execução com Schedule
-        run: echo "Executado conforme agendado...."
+        run: echo "Executado conforme agendado.... $(date) UTC"
       
