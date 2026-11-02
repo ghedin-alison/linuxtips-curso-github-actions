@@ -1,0 +1,11 @@
+name: Acionamento de jobs de Deploy do projeto
+
+on:
+  deployment
+
+jobs:
+  deploy-do-projeto-on-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print do deploy
+        run: echo "Esse job foi acionado por um deployment externo"
