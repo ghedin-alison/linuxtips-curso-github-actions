@@ -1,0 +1,11 @@
+name: Testando Trigger Create
+
+on:
+  create
+
+jobs:
+  print-branch-or-tag-creation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Avisa sobre Criação de nova branch
+        run: echo "Uma nova branch/tag foi criada no repositório"
