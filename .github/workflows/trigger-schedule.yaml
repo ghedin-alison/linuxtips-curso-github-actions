@@ -2,8 +2,7 @@ name: Trigger de Schedule
 
 on:
   schedule:
-    - cron: '7 21 * * *'
-      timezone: "America/Sao_Paulo"
+    - cron: '13 23 * * *'
 
 jobs:
   trigger-schedule:
