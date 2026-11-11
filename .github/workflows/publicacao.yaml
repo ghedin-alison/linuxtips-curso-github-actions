@@ -5,7 +5,7 @@ name: Publicar
 
 on:
   workflow_run:
-    workflows: [Build e Testes]
+    workflows: [Validacao de ambiente]
     types:
       - completed
 
@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Informa o término do workflow
-        run: echo "O Workflow 'Build e Testes' terminou de ser executado"
+        run: echo "O Workflow 'Validacao de ambiente' terminou de ser executado"
