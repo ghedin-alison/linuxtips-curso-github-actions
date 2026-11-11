@@ -14,8 +14,6 @@ jobs:
   testes-e-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - name: Informa o nome do ambiente recebido
         run: echo "O nome do seu ambiente é ${{ inputs.put-environment }}"
