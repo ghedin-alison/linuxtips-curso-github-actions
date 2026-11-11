@@ -1,7 +1,7 @@
 # o primeiro é disparado por um desenvolvedor
 # chamar o segundo que realiza build e testes
 # o terceiro deve ser automaticamente disparado se os testes forem executados com sucesso
-name: Publicação
+name: Publicar
 
 on:
   workflow_run:
