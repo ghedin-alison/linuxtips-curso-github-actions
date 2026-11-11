@@ -1,0 +1,27 @@
+# o primeiro é disparado por um desenvolvedor
+# chamar o segundo que realiza build e testes
+# o terceiro deve ser automaticamente disparado se os testes forem executados com sucesso
+name: Build e Testes
+
+on:
+  workflow_call:
+    inputs:
+      put-environment:
+        required: true
+        type: string
+
+jobs:
+  testes-e-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Informa o nome do ambiente recebido
+        run: echo "O nome do seu ambiente é ${{ inputs.put-environment }}"
+
+      - name: Testes no ambiente
+        run: echo "Testes executando no ambiente de ${{ inputs.put-environment }}"        
+
+      - name: Build no ambiente
+        run: echo "Build no ambiente de ${{ inputs.put-environment }}"                

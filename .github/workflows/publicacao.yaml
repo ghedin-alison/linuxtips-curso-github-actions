@@ -1,0 +1,17 @@
+# o primeiro é disparado por um desenvolvedor
+# chamar o segundo que realiza build e testes
+# o terceiro deve ser automaticamente disparado se os testes forem executados com sucesso
+name: Publicação
+
+on:
+  workflow_run:
+    workflows: [Build e Testes]
+    types:
+      - completed
+
+jobs:
+  comunica-termino-do-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Informa o término do workflow
+        run: echo "O Workflow 'Build e Testes' terminou de ser executado"
