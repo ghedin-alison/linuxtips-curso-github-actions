@@ -1,0 +1,25 @@
+# o primeiro é disparado por um desenvolvedor (workflow dispatch)
+# chamar o segundo que realiza build e testes (workflow call)
+# o terceiro deve ser automaticamente disparado se os testes forem executados com sucesso (workflow run)
+
+name: Validacao de ambiente
+
+on:
+  workflow_dispatch:
+    inputs:
+
+      get-environment:
+        description: 'Nome do ambiente'
+        required: true
+        default: 'dev'
+        type: string
+
+
+jobs:
+  valida-ambiente:
+    uses: ./.github/workflows/build-e-testes.yaml
+    with:
+        put-environment: ${{ inputs.get-environment }}
+
+
+
